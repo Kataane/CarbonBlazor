@@ -1,0 +1,15 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<fieldset id="@Id" class="cb--fieldset">
+  <legend class="cb--label">@Label</legend>
+  <div class="cb--form-item">
+    <div 
+        class="cb--radio-button-group 
+        @(_orientation == "vertical" ? "cb--radio-button-group--vertical" : "")">
+        <CascadingValue Value="this" Name="Parent">
+            @ChildContent
+        </CascadingValue>
+    </div>
+  </div>
+</fieldset>

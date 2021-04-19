@@ -1,0 +1,21 @@
+@namespace CarbonBlazor
+@inherits InputBase<bool>
+
+<div 
+    id="@Id"
+    class="cb--radio-button-wrapper">
+    <input 
+        id="@Id--radio-button" 
+        class="cb--radio-button" 
+        type="radio" 
+        name="@Group"
+        checked="@Checked"
+        disabled="@Disabled"
+        @onchange="@InputChange">
+    <label 
+        for="@Id--radio-button" 
+        class="cb--radio-button__label">
+        <span class="cb--radio-button__appearance"></span>
+        <span class="cb--radio-button__label-text">@Label</span>
+    </label>
+</div>
