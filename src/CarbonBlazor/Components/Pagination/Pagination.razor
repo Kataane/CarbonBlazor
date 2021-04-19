@@ -1,0 +1,57 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div class="cb--pagination">
+  
+  <div class="cb--pagination__left">
+    <label 
+      id="cb--pagination-select-@Id-count-label"
+      class="cb--pagination__text"
+      for="cb-pagination-select-@Id">
+      Items per page:
+    </label>
+    <Select
+      Id="@($"cb-pagination-select-{Id}")"
+      class="cb--select__item-count"
+      @onchange="@SelectPageSize">
+      @foreach (var item in PageSizes)
+      {
+        <SelectItem Text="@(item.ToString())" Value="@(item.ToString())"/>
+      }
+    </Select>
+    <span class="cb--pagination__text cb--pagination__items-count">
+        @startRange – @endRange of @TotalItems items
+    </span>
+  </div>
+
+  <div class="cb--pagination__right">
+    <Select
+        Id="@($"cb-pagination-select-{Id}-right")"
+        class="cb--select__page-number"
+        @onchange="@SelectPage">
+        @for (int i = 1; i <= totalPages; i++)
+        {
+          <SelectItem Text="@(i.ToString())" Value="@(i.ToString())"/>
+        }
+    </Select>
+    <span class="cb--pagination__text">
+      @Page of @totalPages pages
+    </span>
+    <div class="cb--pagination__control-buttons">
+      <button
+        @onclick="PrevPage"
+        class="cb--pagination__button cb--pagination__button--backward @(Page == 1 ? "cb--pagination__button--no-index" : "")"
+        disabled="@(Page == 1)"
+        aria-label="previous page">
+        <Icon Class="cb--pagination__nav-arrow" Type="@IconContainer.CaretLeft" Size="20"/>
+      </button>
+      <button
+        @onclick="NextPage"
+        class="cb--pagination__button cb--pagination__button--forward @(Page == totalPages ? "cb--pagination__button--no-index" : "")"
+        disabled="@(Page == totalPages)"
+        aria-label="next page">
+        <Icon Class="cb--pagination__nav-arrow" Type="@IconContainer.CaretRight" Size="20"/>
+      </button>
+    </div>
+  </div>
+</div>
