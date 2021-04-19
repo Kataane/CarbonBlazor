@@ -1,0 +1,21 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div class="cb--form-item">
+    <label class="cb--label">
+        @Label
+    </label>
+    <div class="cb--slider-container">
+        <label id="Id_bottom-range-label" class="cb--slider__range-label">@Min</label>
+        <div class="cb--slider" data-slider data-slider-input-box="@Id">
+            <div class="cb--slider__thumb" tabindex="0"></div>
+            <div class="cb--slider__track"></div>
+            <div class="cb--slider__filled-track"></div>
+            <input aria-label="slider" id="slider" class="cb--slider__input" type="range" step="@Step" min="@Min" max="@Max"
+                value="@Value">
+        </div>
+        <label id="Id_top-range-label" class="cb--slider__range-label">@Max</label>
+        <input id="Id" aria-labelledby="Id_bottom-range-label Id_top-range-label" type="number"
+            class="cb--text-input cb--slider-text-input" placeholder="@Value" value="@Value">
+    </div>
+</div>
