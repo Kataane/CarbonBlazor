@@ -1,0 +1,11 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<optgroup 
+    class="cb--select-optgroup @Class"
+    label="@Label"
+    disabled="@Disabled">
+    <CascadingValue Value="this" Name="parent">
+        @ChildContent
+    </CascadingValue>
+</optgroup>

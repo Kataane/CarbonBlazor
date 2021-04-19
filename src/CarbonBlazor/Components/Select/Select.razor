@@ -1,0 +1,32 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div class="cb--form-item">
+    <div class="cb--select cb--select--inline @Class">
+
+        @if(!string.IsNullOrEmpty(Label))
+        {
+            <label
+                class="cb--label"
+                for="@Id">
+                @Label
+            </label>
+        }
+
+        <div class="cb--select-input--inline__wrapper">
+            <div class="cb--select-input__wrapper">
+                <select 
+                    id="@Id"
+                    class="cb--select-input"
+                    disabled="@Disabled"
+                    @onchange="@OnChange">
+                    <CascadingValue Value="this" Name="parent">
+                        @ChildContent
+                    </CascadingValue>
+                </select>
+                <Icon Class="cb--select__arrow" Type="@IconContainer.ChevronDown" Size="16"/>
+            </div>
+        </div>
+
+    </div>
+</div>
