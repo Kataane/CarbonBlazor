@@ -1,0 +1,20 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div class="@_class" @onclick="OnClick">
+
+    @if (Type == TagType.Chip)
+    {
+        <span class="cb--tag__label">@Label</span>
+    }
+    else
+    {
+        <span class="cb--tag__label">@Label</span>
+        <button
+            class="cb--tag__close-icon"
+            @onclick="OnClose"
+            @onclick:stopPropagation="true">
+            <Icon Type="@IconContainer.Close" />
+        </button>
+    }
+</div>
