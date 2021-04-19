@@ -1,0 +1,20 @@
+@namespace CarbonBlazor
+@inherits InputBase<bool>
+
+<div
+    id="@Id"
+    class="cb--form-item cb--checkbox-wrapper">
+    <input 
+        id="@Id--checkbox" 
+        class="cb--checkbox" 
+        type="checkbox"
+        @onchange="@InputChange"
+        value="@Value"
+        disabled="@Disabled"
+        checked="@Checked">
+    <label 
+        for="@Id--checkbox" 
+        class="cb--checkbox-label">
+        @if (!string.IsNullOrEmpty(Label)) {@Label}
+    </label>
+</div>

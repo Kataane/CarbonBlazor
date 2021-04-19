@@ -1,0 +1,9 @@
+@namespace CarbonBlazor
+@inherits InputBase<IEnumerable<string>>
+
+<fieldset class="cb--fieldset">
+    <legend class="cb--label">@Label</legend>
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+</fieldset>
