@@ -1,0 +1,13 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div
+    id="@Id"
+    class="cb--content-switcher"
+    role="tablist">
+    <CascadingValue Value="this" Name="parent">
+        @ChildContent
+    </CascadingValue>
+</div>
+@if (_selected is null) return;
+@_selected

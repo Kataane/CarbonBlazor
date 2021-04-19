@@ -1,0 +1,13 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<button 
+    id="@Id"
+    class="cb--content-switcher-btn @(Selected == true ? "cb--content-switcher--selected" : "")"
+    role="tab"
+    aria-selected="@Selected"
+    disabled="@Disabled"
+    @onclick="Select">
+    <span class=cb--content-switcher__label>@Label</span>
+</button>
+
