@@ -1,0 +1,65 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div class="cb--form-item">
+    <div class="cb--dropdown__wrapper">
+        <span
+            id="@Id-label"
+            class="cb--label">
+            @Title
+        </span>
+        <div
+            data-dropdown
+            data-value
+            class="cb--dropdown">
+            <button
+                class="cb--dropdown-text"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="@Id-menu"
+                aria-labelledby="@Id-label @Id-value"
+                type="button"
+                disabled="@Disabled">
+                <span
+                    class="cb--dropdown-text__inner"
+                    id="@Id-value">
+                    @Label
+                </span>
+            </button>
+            <ul
+                id="@Id-menu"
+                class="cb--dropdown-list"
+                role="menu"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="@Id-label">
+                @{
+                    var index = 0;
+                }
+                @foreach (var item in Items)
+                {
+                    <li
+                    data-option
+                    class="cb--dropdown-item"
+                    title="@item">
+                        <a
+                        id="@Id-item @index"
+                        class="cb--dropdown-link"
+                        tabindex="-1"
+                        role="menuitemradio">
+                            @item
+                        </a>
+                    </li>
+                    index++;
+                }
+                @if (string.IsNullOrEmpty(Helper))
+                {
+                    <div
+                    class="@Id--form__helper-text">
+                        @Helper
+                    </div>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
