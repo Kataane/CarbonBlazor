@@ -1,0 +1,23 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div data-tabs class="@_mapper.Class">
+  <ul
+    class="cb--tabs__nav"
+    role="tablist">
+    <CascadingValue Value="this" Name="parent">
+      @ChildContent
+    </CascadingValue>
+  </ul>
+</div>
+
+@if (_selected is null) return;
+<div class="cb--tab-content">
+  <div
+    id="@($"{Selected}__panel")"
+    role="tabpanel">
+    <div>
+      @_selected
+    </div>
+  </div>
+</div>
