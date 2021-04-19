@@ -1,0 +1,26 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<div data-overflow-menu class="cb--overflow-menu">
+  <button
+    id="@Id-trigger" 
+    class="@_mapper.Class"
+    aria-expanded="@Open" 
+    aria-controls="@Id"
+    @onclick="OnClick">
+    <Icon Class="cb--overflow-menu__icon" Type="@IconContainer.OverflowMenuVertical" />
+  </button>
+  <div 
+    id="@Id"
+    class="@_menuOptionsClasses.Class"
+    role="menu">
+    <ul class="cb--overflow-menu-options__content">
+        <CascadingValue Value="this" Name="parent">
+            @ChildContent
+        </CascadingValue>
+    </ul>
+
+    <!-- Note: focusable span allows for focus wrap feature within Overflow Menus -->
+    <span tabindex="0"></span>
+  </div>
+</div>
