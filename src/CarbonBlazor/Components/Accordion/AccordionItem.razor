@@ -1,0 +1,21 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<li
+    class="@_mapper.Class"
+    data-accordion-item
+    aria-expanded="@Open"
+    @onclick="@OnClick">
+    <button
+        class="cb--accordion__heading"
+        type="button"
+        aria-expanded="true"
+        aria-controls="@Id"
+        disabled="@Disabled">
+        <Icon Class="cb--accordion__arrow" Type="@IconContainer.ChevronRight" />
+        <div class="cb--accordion__title">@Title</div>
+    </button>
+    <div id="@Id" class="cb--accordion__content">
+        @if (!Disabled)@ChildContent
+    </div>
+</li>
