@@ -1,0 +1,18 @@
+@namespace CarbonBlazor
+@inherits BaseComponent
+
+<button
+    id="@Id"
+    class="@_class"
+    type="button"
+    disabled="@Disabled"
+    @onclick="OnClick">
+    @if (!OnlyIcon)
+    {
+        @ChildContent
+    }
+    @if (!string.IsNullOrEmpty(Icon))
+    {
+        <Icon Class="cb--btn__icon" Type="@Icon" />
+    }
+</button>
