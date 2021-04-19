@@ -1,0 +1,19 @@
+@namespace CarbonBlazor
+@inherits InputBase<string>
+
+<div class="cb--form-item cb--text-input-wrapper">
+    <label for="@Id" class="cb--label">@Label</label>
+    <div class="cb--text-input__field-wrapper">
+        <input
+            id="@Id"
+            type="text"
+            class="@_class"
+            value="@CurrentValue"
+            placeholder="@CurrentValue"
+            disabled="@Disabled"
+            @oninput="@((ChangeEventArgs e) => CurrentValue = e.Value.ToString())" />
+    </div>
+    <div class="cb--form__helper-text">
+        @Helper
+    </div>
+</div>
