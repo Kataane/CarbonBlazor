@@ -28,7 +28,7 @@ namespace CarbonBlazor
             _mapper
                 .Clear()
                 .SetBase("cb--btn")
-                .Add(Kind.GetDescription())
+                .Add("cb--btn--" + Kind.GetDescription())
                 .Add("cb--btn--disabled", Disabled)
                 .Add("cb--btn--" + Size.GetDescription(), () => Size != Size.Primary)
                 .Add("cb--btn--icon-only", () => OnlyIcon)
